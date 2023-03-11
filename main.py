@@ -146,7 +146,7 @@ class Game:
                 answer = answer[:-1]
             elif key == curses.KEY_ENTER or key in [10, 13]:
                 break
-            elif key >= 32 and key <= 126:
+            elif 32 <= key <= 126:
                 answer += chr(key)
         if answer.strip().lower() in self.current_problem.answer:
             self.screen.clear()
@@ -161,7 +161,6 @@ class Game:
             time.sleep(2)
             self.player.lives -= 1
             return False
-
 
     def gen_spike(self):
         """
@@ -257,6 +256,7 @@ class Game:
         curses.echo()
         curses.endwin()
 
+
 def intro():
     print("Welcome to the game!")
     print("Press space to jump")
@@ -265,6 +265,8 @@ def intro():
     print("Press a to ask a question")
     print("Press enter to continue")
     input()
+
+
 def get_problems():
     problems = Database()
     print("csv file format: question, answer")
@@ -273,6 +275,8 @@ def get_problems():
     user_problems = input("Enter the path to the csv file: ")
     problems.read_csv(user_problems)
     return problems
+
+
 if __name__ == "__main__":
     problems = get_problems()
     intro()
