@@ -148,7 +148,7 @@ class Game:
                 break
             elif key >= 32 and key <= 126:
                 answer += chr(key)
-        if answer.lower() in self.current_problem.answer:
+        if answer.strip().lower() in self.current_problem.answer:
             self.screen.clear()
             self.screen.addstr(0, 0, "Correct!")
             self.screen.refresh()
@@ -196,7 +196,7 @@ class Game:
             start_time = time.time()
 
             # ramp up the difficulty
-            if clock % 5000 == 0 and difficulty < 10:
+            if clock % 2000 == 0 and difficulty < 10:
                 difficulty += 1
 
             # get the current key pressed
