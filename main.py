@@ -196,7 +196,7 @@ class Game:
             start_time = time.time()
 
             # ramp up the difficulty
-            if clock % 10000 == 0 and difficulty < 10:
+            if clock % 5000 == 0 and difficulty < 10:
                 difficulty += 1
 
             # get the current key pressed

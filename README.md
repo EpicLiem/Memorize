@@ -18,3 +18,9 @@ I learned how to use the curses library, to render to the terminal. I also learn
 
 ## What's next for Memorize
 I may improve level generation and add more features like platforms.
+
+## How to run
+1. Open your terminal
+2. Install python 3.8 or higher
+3. Run `python3 main.py`
+4. Enjoy!
